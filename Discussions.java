@@ -2,40 +2,11 @@
 Coordination Mechanisms
 ____________________________________________________________________________
 	GitHub URL	: https://github.com/techhue/FlipkartJEDI
-	Questions 	: https://tinyurl.com/ydylpn64
-	Discussions	: https://tinyurl.com/y8y6lc3a
+	Questions 	: 
+	Discussions	: https://tinyurl.com/ydylpn64
 
 	Must Share Your PRIMARY GMAIL ID
 	Documents Will Be Shared ONLY ON your PRIMARY GMAIL ID
-
-Assignments
-____________________________________________________________________________
-DAY 1: 
-	Reading and Practice
-	Linux Pocket Guide Till Page 63
-
-DAY 2: 
-	Reading and Practice
-	Linux Pocket Guide Till Page 131
-
-DAY 3: 
-	Reading and Practice Git Commands
-		Git Study Material
-	
-	Practical Assignments
-	____________________________________________________________________________
-	Simulate Branching WorkFlow As A Project Workflow
-		Master, Dev and Testing Branch
-
-	Simulate Branching Workflow As A Developer
-		Dev Branch Is Developer Branch
-		Implement Feature with Various Ideas and Approaches
-			Use Branching To Maintain Your Ideas Implementation
-		
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
---> RAISE HAND IF DONE READING AND PRACTICE ASSIGNMENT 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
 
 Hardware/Software Requirements
 ____________________________________________________________________________
@@ -735,19 +706,663 @@ ____________________________________________________________________________
 	cat .git/refs/heads/testing
 
 
+JAVA PROGRAMMING LANGUAGE
+____________________________________________________________________________
+
+	Java Softwares Installation
+	____________________________________________________________________________
+	Java JDK 9+
+
+TEST YOUR ENVIRONMENT : COMMANDS TO COMPILE AND RUN JAVA CODE
+______________________________________________________________________________
+	Create Following Things
+		Hello.java
+		mkdir ClassFiles
+
+	javac Hello.java -d ClassFiles  
+		// Compilation By Invoking Java Compiler
+		// Result Will Hello.class File
+		//	-d Destination of .class Files
+
+	java -cp ClassFiles/ learnJava.Hello 
+		// Invoking JVM
+		// Please Load learnJava.Hello
+		// Search main Function
+		// Start Execution From main Function
+
+	.
+	├── ClassFiles
+	│   └── learnJava
+	│       └── Hello.class
+	└── Hello.java
+
+
+	java Hello.java
+
+++++++++++++++++++++++++++++++++++++++++
+RAISE HAND WHEN FOLLOWING ARE DONE
+++++++++++++++++++++++++++++++++++++++++
+
+____________________________________________________________________________
+
+ASSIGNMENT 1
+____________________________________________
+Write Sum Function In C Language
+
+// Which Will Return Valid SUM For ANY X, Y
+// Otherwise Print Can't Calculate SUM
+
+int sum(int x, int y) {
+
+
+}
+
+ASSIGNMENT 2
+____________________________________________
+Write Sum Function In C Language
+
+// Which Will Return Valid SUM For ANY X, Y
+// Otherwise RETURN ERROR
+
+int sum(int x, int y) {
+
+}
+
+PROVE YOUR CODE IS RIGHT OR WRONG
+	REASON WITH DEFINITION
+		DATA TYPE
+
+
+++++++++++++++++++++++++++++++++++++++++
+RAISE HAND WHEN ABOVE ARE DONE
+++++++++++++++++++++++++++++++++++++++++
+
+
+____________________________________________________________________________
+DESIGN 1 : BAD CODE
+
+int sum(int x, int y) {
+    return x + y;
+}
+
+____________________________________________________________________________
+DESIGN 2 : BAD CODE
+
+int sum(int a,int b) {
+	long int res = a + b; 
+	// res contains already overlowed result
+	//    INT_MIN <= res INT_MAX
+
+	// Violates Closure Property/Law
+	// Following CONDITION is ALWAYS FALSE
+	if(res > INT_MAX || res < INT_MIN){
+		printf(""Cant print sum"");
+		return -1;
+	}
+	else
+		return (int)res;
+}
+____________________________________________________________________________
+
+DESIGN 3: BAD CODE
+
+// API Design Wrong MEss
+
+long long sum(long long int a,long long int b){ 
+  // NOT Portable Code
+  // Asssuming Hardware Architecture
+  if(a>0 && b>0 && a+b<0 ) { 
+                printf(""Can't calculate sum"");
+  }
+  else if(a<0 && b<0  && a+b>0){
+                printf(""Can't calculate sum"");
+  }
+  else printf(""%lld"", a+b);
+}
+
+____________________________________________________________________________
+
+DESIGN 4: BAD CODE
+int sum(int x, int y)
+{
+        long nx=x,ny=y;
+        nx+=ny;
+        if(nx>INT_MAX || nx<INT_MIN)
+                {
+                        printf(""can't print valid sum"");
+                        exit(1);
+                }
+
+        return (int)(nx);
+}
+
+____________________________________________________________________________
+DESIGN 5: RIGHT Directional
+
+int sum(int x,int y)
+{
+        int res = (x+y);
+        
+        if(res-y == x and res-x == y)
+                return res;
+
+        printf(""Error : Can't calculate valid sum.\n"");
+        print(""Returning the first 32 bits of computed sum.\n"")
+        exit(1);
+}
+
+____________________________________________________________________________
+DESIGN 6: BAD CODE
+
+int sum(int a, int b){
+        long result = (long)a + (long)b;
+
+        if(result>INT_MAX||result<INT_MIN){
+                printf(""Can't calculate valid sum\n"");
+                return 0;
+        }
+        else
+ 			// Overflow/Underflow
+                return (int)result;
+}
+____________________________________________________________________________
+DESIGN 8: RIGHT Directional
+
+int sum(int a,int b){
+	int x = a+b;
+	if(a>0 && b>0){
+		if(x>a)
+			return x;
+		else
+		printf(""Invalid"");
+	}
+	else if(a<0 && b<0){
+		if(x<a)
+			return x;
+		else
+		printf(""Invalid"");
+	}
+	return x;
+}
+____________________________________________________________________________
+
+// NOT RESPETING TYPE DEFINITION
+// 
+int sum (int a, int b)
+ {
+     long int sum = (long int)a + (long int)b;
+     if (sum > (long int)INT_MAX || sum < (long int)INT_MIN)
+        {printf(""Sum exceeds int range\n"");exit(1);}
+     else
+        return a + b;
+ }
+
+____________________________________________________________________________
+
+int sum(int x,int y){
+
+	int upper_bound=INT_MAX;
+	int lower_bound=INT_MIN;
+	if(y>=0){
+	///
+		if( x>=0 && upper_bound-x< y){
+		
+	printf(""error\n"");
+	exit(0);
+
+}
+
+}
+else{
+
+if(x<=0 && lower_bound-x>y){
+printf(""error\n"");
+exit(0);
+
+}
+
+}
+return x+y;
 
 
 
+}
+____________________________________________________________________________
+
+Another Approach
+int sum(int x, int y)
+{
+        int result = (x+y);
+
+        if(x>0 && y>0 && (result)<0)
+        {
+                printf(""Can't Calculate Sum"");
+                return -1;
+        }
+
+        else if(x<0 && y<0 && (result)>0)
+        {
+                printf(""Can't Calculate Sum"");
+                return -1;
+        }
+
+        else
+                return result;
+}
 
 
+____________________________________________________________________________
+int sum(int a, int b){
+    // Good Check
+    if((a >= 0 && b > INT_MAX-a) || (a <=0 && b < INT_MIN-a)){
+        printf(""Can't Calculate the Sum"");
+        
+        // POSSIBLE SUM
+        return -1;
+    }
+    return (a+b);
+}
+
+_____________________________
+CLIENT CODE
+	int result = sum(a, b);
+
+____________________________________________________________________________
+DESIGN : GOOD CODE
+DESIGN THINKING: THINKING in ONLY ONE LAYER - LANGUAGE LAYER
+
+#include <limits.h>
+// DEFAULT int is Signed
+
+int sum(signed int si_a, signed int si_b) {
+  signed int sum = 0;
+
+  // Type Safe Code
+  // Following Two Lines
+  // 	Are Repecting Data Type Definition: 
+  //  		int Data Type
+  if (((si_b > 0) && (si_a > (INT_MAX - si_b))) ||
+      ((si_b < 0) && (si_a < (INT_MIN - si_b)))) {
+    /* Handle error */
+	printf("Can't Calculate SUM")
+  } else {
+    sum = si_a + si_b;
+  }
+
+  return sum;
+}
+____________________________________________________________________________
+
+Prove Int In C = Int In Java?
+Prove Int In Java = Int In C++?
+Prove Int In C = Int In C++?
+
+Fundamental Thinking
+____________________________________________________________________________
+OverFlow And Underflow
+	Fundamental Part of System [Finite]
+
+What is Far More Fundamental 
+	Value or Type
+	Variable
+
+Language Designer Thinking
+____________________________________________________________________________
+	Language Design
+		Ballee Balleee Language
+	
+	Data Type
+		int In Balleee Ballee
+			Which Design You Will Prefer and Why?
+
+Object Oriented Design
+______________________________________________________________________________
+	Behaviour Deriven Design
+		Behaviour | Messages | Operations
+	Objects Talks With Each Others Using Message Passging
+
+Object Oriented Design Concepts : Revisit
+______________________________________________________________________________
+	1. Encapsulation
+	2. Inheritance
+	3. Polymorphism
+	4. Abstraction
+	5. Composite
 
 
+System Design Principles
+______________________________________________________________________________
+Fundamental Principles
+
+Scope Design Principles
+	Because Localisation Happens In System
+
+Design Towards Abstrat Type Rather Than Concerete Type
+	Design Towards Interfaces Rather Than Concerete Classes
+		Interfaces Brings Contract In System
+			Design By Conventions
+				  When Everyone Respect Conventions
+				  It Brings Trust In System
+				  System Based Trust Works Better	
+
+	Design By Configuration(Rules)
+		Rules Are Fixed
+		System Evolution Stops
+
+Design Towards Immutability Rather Than Mutability
+	Classes Not Meant To Subclassed Must Be Final
+	Member Functions Not Meant To Be Overridden Must Be Final
+	Member Varibles Not Meant To Be Changing Must Be Final 
 
 
+SOLID Principles
+_______________________________________________________________________
+	1. Single Repsonility Design Principle
+	2. Open Close Principle
+		Classes/Types Are Open Extension But Close Modification
+
+Learning Principles
+_______________________________________________________________________
+	Chaos is a Ladder :P 
+	First Choas Than Order!
+	Toughest Things In This World is Unlearning!
+	
+System Design Thining
+_______________________________________________________________________
+	Where To Start?
+	____________________________________________________________
+		Should You Design System Based On Configuration(Rules)?
+			Mind Focused Towards States and Rules
+			Rules Meant To Be Broken!
 
 
+		Should You Design System Based On Conventions?
+			Mind Focused Towards Contracts/Trust
+
+			e.g. 
+			Design Towards Interfaces Rather Than Concerete Classes
+
+	Design By Conventions VS Design By Configurations
+	____________________________________________________________
+		Design By Conventions is Better
+			Con
+
+System Mess
+_______________________________________________________________________
+	1. State Comes First
+	2. Order Comes First and Applied Universely
+	3. Type Mess violates Type Safety
 
 
+Function As An Idea
+_______________________________________________________________________
+ 	Function As Procedure | Task | Routine | Method
+	___________________________________________________________________
+		Definition: Sequence of Instuctions
+
+	Function Type
+	___________________________________________________________________
+		Definition: Function is Type
+			Function Type = { Operations, Range }
+
+	Function is Lambda
+	___________________________________________________________________
+		Special Case of Lambda
+
+Lambda
+_______________________________________________________________________
+	It is a Context Which Captures Immediate Context Around It
+
+
+Override equal Method : Best Practices
+______________________________________________________________________
+- There are a number of routine steps that you need to go through in an equals method:
+	
+	- Whenever you override the equals method, you must provide a compatible hashCode method as well
+
+	- It is common for equal objects to be identical, and that test is very inexpensive.
+
+	- Every equals method is required to return false when comparing against null.
+
+	- Since the equals method overrides Object.equals, its parameter is of type Object, and you need to cast it to the actual type so you can look at its instance variables. Before doing that, make a type check, either with the getClass method or with the instanceof operator.
+
+	- Finally, compare the instance variables. Use == for primitive types. How- ever, for double values, if you are concerned about ±∞ or NaN, use Double.equals. For objects, use Objects.equals, a null-safe version of the equals method. The call Objects.equals(x, y) returns false if x is null, whereas x.equals(y) would throw an exception.
+
+
+	- The hashCode and equals methods must be compatible: 
+		If x.equals(y), then it must be the case that x.hashCode() == y.hashCode()
+
+
+	- A hash code is an integer that is derived from an object.
+
+	- Hash codes should be scrambled—if x and y are two unequal objects, there should be a high probability that x.hashCode() and y.hashCode() are different.
+
+equals Contract In Java Specification
+_____________________________________________________________________
+public boolean equals(Object obj)
+
+	Indicates whether some other object is "equal to" this one.
+	The equals method implements an equivalence relation on non-null object references:
+
+	It is reflexive: for any non-null reference value x, x.equals(x) should return true.
+
+	It is symmetric: for any non-null reference values x and y, x.equals(y) should return true if and only if y.equals(x) returns true.
+
+	It is transitive: for any non-null reference values x, y, and z, if x.equals(y) returns true and y.equals(z) returns true, then x.equals(z) should return true.
+
+	It is consistent: for any non-null reference values x and y, multiple invocations of x.equals(y) consistently return true or consistently return false, provided no information used in equals comparisons on the objects is modified.
+
+	//____________________________________________________________
+
+	For any non-null reference value x, x.equals(null) should return false.
+	
+	The equals method for class Object implements the most discriminating possible equivalence relation on objects; that is, for any non-null reference values x and y, this method returns true if and only if x and y refer to the same object (x == y has the value true).
+
+	Note that it is generally necessary to override the hashCode method whenever this method is overridden, so as to maintain the general contract for the hashCode method, which states that equal objects must have equal hash codes.
+
+_____________________________________________________________________
+
+class Money {
+    int amount;
+    String currencyCode;
+}
+
+Money income = new Money(55, "USD");
+Money expenses = new Money(55, "USD");
+boolean balanced = income.equals(expenses)
+
+class Money {
+    int amount;
+    String currencyCode;
+
+	@Override
+	public boolean equals(Object o) {
+	    if (o == this)
+	        return true;
+	    if (!(o instanceof Money))
+	        return false;
+	    Money other = (Money)o;
+	    boolean currencyCodeEquals = (this.currencyCode == null && other.currencyCode == null)
+	      || (this.currencyCode != null && this.currencyCode.equals(other.currencyCode));
+	    return this.amount == other.amount && currencyCodeEquals;
+	}
+
+}
+
+class WrongVoucher extends Money {
+    private String store;
+ 
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof WrongVoucher))
+            return false;
+        WrongVoucher other = (WrongVoucher)o;
+        boolean currencyCodeEquals = (this.currencyCode == null && other.currencyCode == null)
+          || (this.currencyCode != null && this.currencyCode.equals(other.currencyCode));
+        boolean storeEquals = (this.store == null && other.store == null)
+          || (this.store != null && this.store.equals(other.store));
+        return this.amount == other.amount && currencyCodeEquals && storeEquals;
+    }
+ 
+    // other methods
+}
+
+At first glance, the Voucher class and its override for equals() seem to be correct. And both equals() methods behave correctly as long as we compare Money to Money or Voucher to Voucher. 
+
+But what happens, if we compare these two objects?
+
+Money cash = new Money(42, "USD");
+WrongVoucher voucher = new WrongVoucher(42, "USD", "Amazon");
+ 
+voucher.equals(cash) => false // As expected.
+cash.equals(voucher) => true // That's wrong.
+That violates the symmetry criteria of the equals() contract
+
+
+“Effective Java” Best Practices: Final Classes and Final Members
+______________________________________________________________________
+Item 17 in “Effective Java” 
+	
+	Suggests that every class should either not be sub-classable or be carefully designed and documented to support inheritance. 
+
+	In Java, every class can be subclassed unless you explicitly specify the class as final. 
+
+	If you forget to make the class final and fail to design and document it for inheritance, there will be trouble when clients think that they can create subclasses, override some methods and assume that everything will still work as expected.
+
+Clone Guidlines and Best Practices
+______________________________________________________________________
+- Don’t override clone unless you have a good reason to do so
+
+- Less than five percent of the classes in the standard Java library implement clone.
+
+- The purpose of the clone method is to make a “clone” of an object
+	— a distinct object with the same state of the original.
+
+- The clone method is declared as protected in the Object class, so you must override it if you want users of your class to clone instances.
+
+- The Object.clone method makes a shallow copy. It simply copies all instance variables from the original to the cloned object. That is fine if the variables are primitive or immutable. But if they aren’t, then the original and the clone share mutable state, which can be a problem.
+
+
+- In general, when you implement a class, you need to decide whether 
+	1. You do not want to provide a clone method, or 
+	2. The inherited clone method is acceptable, or 
+	3. The clone method should make a deep copy.
+
+- For the first option, simply do nothing. Your class will inherit the clone method, but no user of your class will be able to call it since it is protected.
+
+- To choose the second option, your class must implement the Cloneable interface. This is an interface without any methods, called a tagging or marker interface. (Recall that the clone method is defined in the Object class.) The Object.clone method checks that this interface is implemented before making a shallow copy, and throws a CloneNotSupportedException otherwise.
+
+- You will also want to raise the scope of clone from protected to public, and change the return type.
+
+- Finally, you need to deal with the CloneNotSupportedException. This is a checked exception
+
+- you must either declare or catch it. If your class is final, you can catch it. Otherwise, declare the exception since it is possible that a subclass might again want to throw it.
+
+- The cast (Employee) is necessary since the return type of Object.clone is Object.
+
+- The third option for implementing the clone method, in which a class needs to make a deep copy, is the most complex case. You don’t need to use the Object.clone method at all.
+
+- However, for historical reasons, the ArrayList.clone method has return type Object. You need to use a cast.
+
+- // Warning
+
+- that cast cannot be fully checked at runtime, and you will get a warning. You can suppress the warning with an annotation, but that annotation can only be attached to a declaration
+
+- @SuppressWarnings("unchecked")
+
+Exceptions In Java
+______________________________________________________________________
+
+- All exceptions are sub- classes of the class Throwable. Subclasses of Error are exceptions that are thrown when something exceptional happens that the program cannot be expected to handle, such as memory exhaustion. There is not much you can do about errors other than giving a message to the user that things have gone very wrong.
+
+- Programmer-reported exceptions are subclasses of the class Exception. These exceptions fall into two categories: • Unchecked exceptions are subclasses of RuntimeException. • All other exceptions are checked exceptions
+
+- Programmers must either catch checked exceptions or declare them in the method header. The compiler checks that these exceptions are handled properly.
+
+	- NOTE: The name RuntimeException is unfortunate. Of course, all exceptions occur at runtime. However,
+
+- The exceptions that are subclasses of RuntimeException are not checked during compilation.
+
+- Checked exceptions are used in situations where failure should be anticipated and Handled
+____ 
+
+- One common reason for failure is input and output. Files may be damaged, and network connections may fail. A number of exception classes extend IOException, and you should use an appropriate one to report any errors that you encounter.
+
+- Unchecked exceptions indicate logic errors caused by programmers, not by unavoidable external risks.
+
+- For example, a NullPointerException is not checked. Just about any method might throw one, and programmers shouldn’t spend time on catching them. Instead, they should make sure that no nulls are dereferenced in the first place.
+
+- Sometimes, implementors need to use their judgment to make a distinction between checked and unchecked exceptions.
+
+// Java Framework is Not Consistent w.r.t. Checked/Unchecked
+	- Consider the call Integer.parseInt(str). It throws an unchecked NumberFormatException when str doesn’t contain a valid integer. On the other hand, 
+
+	- Class.forName(str) throws a checked ClassNotFoundException when str doesn’t contain a valid class name.
+
+Checked Exception
+______________________________________________________________________
+  - Any method that might give rise to a checked exception must declare it in the method header with a throws clause:
+
+	  //Callee
+		  public void write(Object obj, String filename)
+		       throws IOException, ReflectiveOperationException {
+
+		       	// BODY
+		  }
+
+	  // Caller Should Handle This One
+	  // Compiler Check Checked Exceptions Are Handled In Call Tree
+
+	  // Exception Handling: 
+		  try {
+		  	write()
+
+		  } catch(IOException) {
+		  	//handling code
+			  	println("Username is not valid");
+			  	tryLoginAgain();
+
+		  } catch(ReflectiveOperationException) {
+
+		  }
+
+- List the exceptions that the method might throw, either because of a throw statement or because it calls another method with a throws clause.
+
+- In the throws clause, you can combine exceptions into a common superclass. Whether or not that is a good idea depends on the exceptions
+
+- For example, if a method can throw multiple subclasses of IOException, it makes sense to cover them all in a clause throws IOException. But if the exceptions are unrelated, don’t combine them into throws Exception—that would defeat the purpose of exception checking.
+
+- TIP: Some programmers think it is shameful to admit that a method might throw an exception. Wouldn’t it be better to handle it instead? Actually, the opposite is true. You should allow each exception to find its way to a competent handler.
+
+Generics Bounds In Java
+______________________________________________________________________
+
+	? extends Employee
+	__________________________
+	Specifies Upper Bound 
+		i.e. Employee is Upper Type Allowed 
+	
+	- The wildcard type ? extends Employee denotes an arbitrary subtype of Employee. 
+
+	
+	? super Employee  
+	__________________________
+	Specifies Lower Bound 
+	i.e. Employee is Lower Type Allowed
+
+	- The converse is the wildcard type ? super Employee which denotes a supertype of Employee
+
+	- These wildcards are often useful as parameters in functional objects.
+
+______________________________________________________________________
+
+______________________________________________________________________
+______________________________________________________________________
+______________________________________________________________________
+______________________________________________________________________
+______________________________________________________________________
 
 
 
@@ -766,9 +1381,10 @@ From Anil Bansal to Everyone: (02:22 PM)
 From saurav anand to Everyone: (02:22 PM)
  bur x permission is with grp
 
-
-
-
+____________________________________________________________________________
+// Sahaj
+int a[2][2];         
+printf("%p\n%p\n",a,*a);
 
 
 
